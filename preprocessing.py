@@ -4,11 +4,6 @@ import librosa
 import glob
 
 def detect_leading_silence(sound, silence_threshold=.001, chunk_size=10):
-    # this function first normalizes audio data
-    #calculates the amplitude of each frame
-    #silence_threshold is used to flip the silence part
-    #the number of silence frame is returned.
-    #trim_ms is the counter
     trim_ms = 0
     max_num = max(sound)
     sound = sound/max_num
@@ -43,11 +38,6 @@ def feature_extract():
         mfccs = librosa.feature.mfcc(y=trimmed_sound, sr=sr)
         aver = np.mean(mfccs, axis = 1)
         feature = aver.reshape(20)
-
-        #store label and feature
-        #the output should be a list
-        #label and feature, corresponds one by one
-        #feature.append(aver)
         label=0
         """if filename[16:19] == 'cel':
             label = 1
