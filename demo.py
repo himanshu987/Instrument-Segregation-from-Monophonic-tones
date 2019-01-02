@@ -53,7 +53,7 @@ def main():
     audio_filename = input("Please choose an audio file(test/1-10.mp3): ")
     demo_data = feature_extract(audio_filename)
     print 'processed data.'
-    #  train_and_test(data,svc)
+    # train_and_test(data,svc)
     model = classify.load_model()
     pre = classify.predict(model, demo_data)
     result(pre)
