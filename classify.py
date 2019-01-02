@@ -21,7 +21,7 @@ def train_and_test(data, cv_fold=10):
     np.random.shuffle(data)
     accu_rates = []
     models = []
-    for fold in xrange(cv_fold):              ### only one trial for now
+    for fold in xrange(cv_fold):             ### only one trial for now
         print 'start fold:', fold
         train_data = data[:fold_unit*fold] + data[fold_unit*(fold+1):]
         test_data = data[fold_unit*fold:fold_unit*(fold+1)]
