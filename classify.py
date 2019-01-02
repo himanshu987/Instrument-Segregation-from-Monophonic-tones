@@ -41,8 +41,8 @@ def train(data):
     src_names, features, labels = unpack_data(data)
     print 'train feature vector dim:', features.shape
     #svc = svm.LinearSVC(C = 1.0)
-    svc = SVC(kernel = 'rbf',gamma = 0.7,C = 1.0, random_state = 0)
-    #svc = svm.SVC(kernel='poly', degree=3, C=1.0)
+    #svc = SVC(kernel = 'rbf',gamma = 0.7,C = 1.0, random_state = 0)
+    svc = svm.SVC(kernel='poly', degree=3, C=1.0)
     svc.fit(features, labels)
     return svc
 
